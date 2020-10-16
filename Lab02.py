@@ -7,10 +7,10 @@ Data = []
 Row = []
 ColumnNames = []#массив заголовков
 
-print('Чтение XML...')
+print('Чтение XML:')
 root = etree.parse("OBV_full.xml")
 
-print('Добавление заголовков столбцов...')
+print('Добавление заголовков столбцов:')
 Vacancies = root.find('vacancies').getiterator('vacancy')
 for Vacancy in Vacancies:
   tags = Vacancy.getiterator()
@@ -62,6 +62,6 @@ for vacancy in Vacancies:
 if Row:
     Data.append(Row)
 
-print('Запись данных...')
+print('Запись данных:')
 DataToCSV = pd.DataFrame(Data, columns=ColumnNames)
 DataToCSV.to_csv("Result.csv",  na_rep = '*', encoding = 'utf8')
