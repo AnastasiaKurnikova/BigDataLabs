@@ -5,7 +5,7 @@ import re
 
 Data = []
 Row = []
-ColumnNames = []#массив заголовков
+ColumnNames = []
 
 print('Чтение XML:')
 root = etree.parse("OBV_full.xml")
